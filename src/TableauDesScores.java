@@ -20,11 +20,14 @@ public class TableauDesScores {
 			out.println(a);
 			out.close();
 		}catch(IOException e) {
-		      // Typiquement, on n'a pas pu ouvrir le fichier choisi par l'utilisateur
-		      System.out.println("### MESSAGE D'ERREUR : " + e.getMessage());
-		      System.out.println("### AFFICHAGE DE LA PILE D'APPEL : ");
-		      e.printStackTrace();
-		}
+		    // Typiquement, on n'a pas pu ouvrir le fichier choisi par l'utilisateur
+		    System.out.println("### MESSAGE D'ERREUR : " + e.getMessage());
+		    System.out.println("### AFFICHAGE DE LA PILE D'APPEL : ");
+		    e.printStackTrace();
+		}catch (Exception e) {
+            // ignore
+	    	System.out.println("### Error: " + e.getMessage());
+        }
 		actualiserTab();
 		classerTableau();
 	}
@@ -78,7 +81,7 @@ public class TableauDesScores {
 	
 	//fonction à appliquer après classement
 	public boolean estMeilleurScore(int a){
-		if(a>=tab[0]) return true;
+		if((nbScores>0) && (a>=tab[0])) return true;
 		else return false;
 	}
 	

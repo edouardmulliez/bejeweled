@@ -36,8 +36,8 @@ public class IntBej extends Applet implements ActionListener, MouseListener, Run
 	
 	public  void init() { 
 		partie=new JeuBej();
-		tabScores=new TableauDesScores("tableau des scores"); //pour la sauvegarde des scores
-		tabScoresChrono=new TableauDesScores("tableau des scores (mode timed)");
+		tabScores=new TableauDesScores("scores.txt"); //pour la sauvegarde des scores
+		tabScoresChrono=new TableauDesScores("scores-timed-mode.txt");
 		anim=new Thread(this);
 		
 	
